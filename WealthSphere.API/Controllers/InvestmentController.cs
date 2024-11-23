@@ -10,7 +10,7 @@ namespace WealthSphere.API.Controllers
     public class InvestmentController : ControllerBase
     {
         private readonly ILogger<InvestmentController> _logger;
-        public readonly InvestmentService _investmentService;
+        public readonly IInvestmentService _investmentService;
 
         public InvestmentController(ILogger<InvestmentController> logger, IInvestmentService investmentService)
         {

@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WealthSphere.Repository.DataAccess
 {
     public class Investment
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        public string?  InvestmentType { get; set; }
+        public string?  FinancialInstitute { get; set; }
+        public DateTime Date { get; set; }
+        public string? ModeOfPayment { get; set; }
+        public decimal Amount { get; set; }
+        public Guid UserId { get; set; }
     }
 }
