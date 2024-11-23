@@ -21,6 +21,7 @@ namespace WealthSphere.Services.Implementation
                 InvestmentType = investmentModel.InvestmentType,
                 FinancialInstitute = investmentModel.FinancialInstitute,
                 ModeOfPayment = investmentModel.ModeOfPayment,
+                Purpose = investmentModel.Purpose,
                 Date = investmentModel.Date,
                 Amount = investmentModel.Amount,
                 UserId = investmentModel.UserId,
@@ -37,6 +38,7 @@ namespace WealthSphere.Services.Implementation
                 InvestmentType = investmentModel.InvestmentType,
                 FinancialInstitute = investmentModel.FinancialInstitute,
                 ModeOfPayment = investmentModel.ModeOfPayment,
+                Purpose = investmentModel.Purpose,
                 Date = investmentModel.Date,
                 Amount = investmentModel.Amount,
                 UserId = investmentModel.UserId
@@ -64,6 +66,7 @@ namespace WealthSphere.Services.Implementation
                     InvestmentType = item.InvestmentType,
                     FinancialInstitute = item.FinancialInstitute,
                     ModeOfPayment = item.ModeOfPayment,
+                    Purpose = item.Purpose,
                     Date = item.Date,
                     Amount = item.Amount,
                     UserId = item.UserId
@@ -82,6 +85,7 @@ namespace WealthSphere.Services.Implementation
                 InvestmentType = result.InvestmentType,
                 FinancialInstitute = result.FinancialInstitute,
                 ModeOfPayment = result.ModeOfPayment,
+                Purpose = result.Purpose,
                 Date = result.Date,
                 Amount = result.Amount,
                 UserId = result.UserId

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WealthSphere.Model;
-using WealthSphere.Services.Implementation;
 using WealthSphere.Services.Interface;
 
 namespace WealthSphere.API.Controllers
@@ -70,7 +69,7 @@ namespace WealthSphere.API.Controllers
         [HttpGet("currentMonth")]
         public async Task<IActionResult> GetInvestmentByCurrentMonth(Guid userId)
         {
-            var result = await _InvestmentService.GetInvestmentByCurrentMonth(userId);
+            var result = await _investmentService.GetInvestmentByCurrentMonth(userId);
             return Ok(result);
 
         }

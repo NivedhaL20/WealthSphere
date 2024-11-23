@@ -8,6 +8,7 @@ namespace WealthSphere.Repository.DataAccess
         public string?  FinancialInstitute { get; set; }
         public DateTime Date { get; set; }
         public string? ModeOfPayment { get; set; }
+        public string? Purpose { get; set; }
         public decimal Amount { get; set; }
         public Guid UserId { get; set; }
     }
