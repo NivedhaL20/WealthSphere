@@ -16,4 +16,10 @@ namespace WealthSphere.Model
         public int Month { get; set; }
         public decimal TotalAmount { get; set; }
     }
+
+    public class ExpenseByCategory
+    {
+        public string Category { get; set; }
+        public decimal TotalAmount { get; set; }
+    }
 }

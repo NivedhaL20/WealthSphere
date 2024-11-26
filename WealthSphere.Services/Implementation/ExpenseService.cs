@@ -115,5 +115,20 @@ namespace WealthSphere.Services.Implementation
             var expense = await _expenseRepository.GetDebtsByCurrentMonth(currentMonth, currentYear, userId);
             return expense;
         }
+
+        public async Task<List<ExpenseByCategory>> GetExpenseByCategory(int year, Guid userId)
+        {
+            var expenses = await _expenseRepository.GetExpenseByYear(year, userId);
+
+            var groupedByMonth = expenses.GroupBy(x => new { x.Date.Year, x.Date.Month, x.ExpenseType })
+                .Select(y => new ExpenseByCategory
+                {
+                    Category = y.Key.ExpenseType,
+                    TotalAmount = y.Sum(i => i.Amount)
+                })
+                .OrderBy(x => x.Category).ToList();
+
+            return groupedByMonth;
+        }
     }
 }

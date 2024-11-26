@@ -13,5 +13,6 @@ namespace WealthSphere.Services.Interface
         Task<List<ExpenseByMonth>> GetExpenseByYear(int year, Guid userId);
         Task<decimal> GetExpenseByCurrentMonth(Guid userId);
         Task<decimal> GetDebtsByCurrentMonth(Guid userId);
+        Task<List<ExpenseByCategory>> GetExpenseByCategory(int year, Guid userId);
     }
 }
