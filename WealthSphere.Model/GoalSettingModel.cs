@@ -8,5 +8,7 @@ namespace WealthSphere.Model
 {
     public class GoalSettingModel
     {
+        public Guid Id { get; set; }
+        public string UserId { get; set; }
     }
 }

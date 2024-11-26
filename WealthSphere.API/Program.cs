@@ -28,6 +28,9 @@ builder.Services.AddTransient<IInvestmentRepository, InvestmentRepository>();
 builder.Services.AddTransient<IFeedbackService, FeedbackService>();
 builder.Services.AddTransient<IFeedbackRepository, FeedbackRepository>();
 
+builder.Services.AddTransient<IGoalSettingService, GoalSettingService>();
+builder.Services.AddTransient<IGoalSettingRepository, GoalSettingRepository>();
+
 builder.Services.AddAutoMapper(typeof(AutoMapping));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

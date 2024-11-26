@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using WealthSphere.Model;
+using WealthSphere.Services.Interface;
 
 namespace WealthSphere.API.Controllers
 {
@@ -8,6 +8,37 @@ namespace WealthSphere.API.Controllers
     [ApiController]
     public class GoalSettingsController : ControllerBase
     {
-        
+        private readonly ILogger<GoalSettingsController> _logger;
+        public readonly IGoalSettingService _goalSettingService;
+
+        public GoalSettingsController(ILogger<GoalSettingsController> logger, IGoalSettingService goalSettingService)
+        {
+            _logger = logger;
+            _goalSettingService = goalSettingService;
+        }
+
+        //Open for edit
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var result = await _goalSettingService.GetById(id);
+            return Ok(result);
+        }
+
+        //Add
+        [HttpPost]
+        public async Task<IActionResult> Add([FromBody] GoalSettingModel goalSettingModel)
+        {
+            var result = await _goalSettingService.AddAsync(goalSettingModel);
+            return Ok(result);
+        }
+
+        //Update
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] GoalSettingModel goalSettingModel)
+        {
+            var result = await _goalSettingService.UpdateAsync(goalSettingModel);
+            return Ok(result);
+        }        
     }
 }

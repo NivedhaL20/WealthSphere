@@ -22,7 +22,7 @@ namespace WealthSphere.Services.Implementation
                 MonthlyIncome = incomeModel.MonthlyIncome,
                 Date=incomeModel.Date,
                 OtherSource=incomeModel.OtherSource,
-                TotalCTC=incomeModel.TotalCTC
+                TotalCTC=incomeModel.TotalCTC,
                 UserId = Guid.Parse(incomeModel.UserId)
             };
             var result = await _incomeRepository.AddAsync(income);
