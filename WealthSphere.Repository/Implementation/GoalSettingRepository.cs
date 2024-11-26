@@ -26,7 +26,7 @@ namespace WealthSphere.Repository.Implementation
 
         public async Task<GoalSetting> GetById(Guid id)
         {
-            var goalSetting = await _dbContext.GoalSetting.Where(x => x.Id == id).FirstOrDefaultAsync();
+            var goalSetting = await _dbContext.GoalSetting.Where(x => x.UserId == id).FirstOrDefaultAsync();
             await _dbContext.SaveChangesAsync();
             return goalSetting;
         }

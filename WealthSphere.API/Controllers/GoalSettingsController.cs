@@ -19,9 +19,10 @@ namespace WealthSphere.API.Controllers
 
         //Open for edit
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<IActionResult> GetById(string id)
         {
-            var result = await _goalSettingService.GetById(id);
+            var userId = Guid.Parse(id);
+            var result = await _goalSettingService.GetById(userId);
             return Ok(result);
         }
 

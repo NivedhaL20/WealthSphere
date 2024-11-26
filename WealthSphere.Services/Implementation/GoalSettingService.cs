@@ -18,6 +18,11 @@ namespace WealthSphere.Services.Implementation
             var expense = new GoalSetting
             {
                 Id = Guid.NewGuid(),
+                HowMuchDebtsForMonth = goalSettingModel.HowMuchDebtsForMonth,
+                HowMuchEmergencyFundForMonth = goalSettingModel.HowMuchEmergencyFundForMonth,
+                HowMuchIncomeForMonth = goalSettingModel.HowMuchIncomeForMonth,
+                HowMuchSaveForMonth = goalSettingModel.HowMuchSaveForMonth,
+                HowMuchSpendForMonth = goalSettingModel.HowMuchSpendForMonth,
                 UserId = Guid.Parse(goalSettingModel.UserId),
             };
             var result = await _goalSettingRepository.AddAsync(expense);
@@ -29,7 +34,12 @@ namespace WealthSphere.Services.Implementation
             var result = await _goalSettingRepository.GetById(id);
             var expense = new GoalSettingModel
             {
-                Id = result.Id,                
+                Id = result.Id,
+                HowMuchDebtsForMonth = result.HowMuchDebtsForMonth,
+                HowMuchEmergencyFundForMonth = result.HowMuchEmergencyFundForMonth,
+                HowMuchIncomeForMonth = result.HowMuchIncomeForMonth,
+                HowMuchSaveForMonth = result.HowMuchSaveForMonth,
+                HowMuchSpendForMonth = result.HowMuchSpendForMonth,
                 UserId = result.UserId.ToString(),
             };
             return expense;
@@ -40,6 +50,11 @@ namespace WealthSphere.Services.Implementation
             var expense = new GoalSetting
             {
                 Id = goalSettingModel.Id,
+                HowMuchDebtsForMonth = goalSettingModel.HowMuchDebtsForMonth,
+                HowMuchEmergencyFundForMonth = goalSettingModel.HowMuchEmergencyFundForMonth,
+                HowMuchIncomeForMonth = goalSettingModel.HowMuchIncomeForMonth,
+                HowMuchSaveForMonth = goalSettingModel.HowMuchSaveForMonth,
+                HowMuchSpendForMonth = goalSettingModel.HowMuchSpendForMonth,
                 UserId = Guid.Parse(goalSettingModel.UserId)
             };
             var result = await _goalSettingRepository.UpdateAsync(expense);
