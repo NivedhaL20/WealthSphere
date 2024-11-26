@@ -13,6 +13,7 @@ namespace WealthSphere.Repository
         public DbSet<Income> Income { get; set; }
         public DbSet<Expense> Expense { get; set; }
         public DbSet<Investment> Investment { get; set; }
+        public DbSet<Feedback> Feedback { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

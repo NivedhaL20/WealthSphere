@@ -22,9 +22,25 @@ builder.Services.AddTransient<IIncomeRepository, IncomeRepository>();
 builder.Services.AddTransient<IExpenseService, ExpenseService>();
 builder.Services.AddTransient<IExpenseRepository, ExpenseRepository>();
 
+builder.Services.AddTransient<IInvestmentService, InvestmentService>();
+builder.Services.AddTransient<IInvestmentRepository, InvestmentRepository>();
+
+builder.Services.AddTransient<IFeedbackService, FeedbackService>();
+builder.Services.AddTransient<IFeedbackRepository, FeedbackRepository>();
+
 builder.Services.AddAutoMapper(typeof(AutoMapping));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+    {
+        builder.WithOrigins("*")
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -39,5 +55,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.Run();

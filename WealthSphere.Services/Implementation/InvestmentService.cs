@@ -24,7 +24,7 @@ namespace WealthSphere.Services.Implementation
                 Purpose = investmentModel.Purpose,
                 Date = investmentModel.Date,
                 Amount = investmentModel.Amount,
-                UserId = investmentModel.UserId,
+                UserId = Guid.Parse(investmentModel.UserId)
             };
             var result = await _investmentRepository.AddAsync(investment);
             return result;
@@ -41,7 +41,7 @@ namespace WealthSphere.Services.Implementation
                 Purpose = investmentModel.Purpose,
                 Date = investmentModel.Date,
                 Amount = investmentModel.Amount,
-                UserId = investmentModel.UserId
+                UserId = Guid.Parse(investmentModel.UserId)
             };
             var result = await _investmentRepository.UpdateAsync(investment);
             return result;
@@ -69,7 +69,7 @@ namespace WealthSphere.Services.Implementation
                     Purpose = item.Purpose,
                     Date = item.Date,
                     Amount = item.Amount,
-                    UserId = item.UserId
+                    UserId = item.UserId.ToString()
                 };
                 list.Add(investment);
             }
@@ -88,7 +88,7 @@ namespace WealthSphere.Services.Implementation
                 Purpose = result.Purpose,
                 Date = result.Date,
                 Amount = result.Amount,
-                UserId = result.UserId
+                UserId = result.UserId.ToString()
             };
             return investment;
         }

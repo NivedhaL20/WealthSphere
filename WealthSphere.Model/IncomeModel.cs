@@ -14,7 +14,7 @@ namespace WealthSphere.Model
         public decimal TotalCTC { get; set; }
         public decimal MonthlyIncome { get; set; }
         public string ?OtherSource { get; set; }
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
     }
 
     public class IncomeByMonth

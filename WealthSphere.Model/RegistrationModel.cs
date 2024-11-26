@@ -10,7 +10,7 @@ namespace WealthSphere.Model
         public string ?LastName { get; set; }
         [Required(ErrorMessage = "Email Address is required")]
         public string ?EmailId { get; set; }
-        [Required(ErrorMessage = "Phone Number is required")]
+        //[Required(ErrorMessage = "Phone Number is required")]
         public string ?PhoneNumber { get; set; }
         [Required(ErrorMessage = "Password is required")]
         public string ?Password { get; set; }

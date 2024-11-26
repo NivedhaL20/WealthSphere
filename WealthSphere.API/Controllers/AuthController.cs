@@ -34,8 +34,8 @@ namespace WealthSphere.API.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegistrationModel request)
         {
-            if (string.IsNullOrEmpty(request.EmailId) || string.IsNullOrEmpty(request.PhoneNumber))
-                return BadRequest(new { message = "Email address and Phone number are required" });
+            if (string.IsNullOrEmpty(request.EmailId))
+                return BadRequest(new { message = "Email address is required" });
             
             var result = _authService.Register(request);
 

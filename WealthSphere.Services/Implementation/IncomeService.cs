@@ -23,6 +23,7 @@ namespace WealthSphere.Services.Implementation
                 Date=incomeModel.Date,
                 OtherSource=incomeModel.OtherSource,
                 TotalCTC=incomeModel.TotalCTC
+                UserId = Guid.Parse(incomeModel.UserId)
             };
             var result = await _incomeRepository.AddAsync(income);
             return result;
@@ -37,7 +38,8 @@ namespace WealthSphere.Services.Implementation
                 MonthlyIncome = incomeModel.MonthlyIncome,
                 Date = incomeModel.Date,
                 OtherSource = incomeModel.OtherSource,
-                TotalCTC = incomeModel.TotalCTC
+                TotalCTC = incomeModel.TotalCTC,
+                UserId = Guid.Parse(incomeModel.UserId)
             };
             var result = await _incomeRepository.UpdateAsync(income);
             return result;
@@ -63,7 +65,8 @@ namespace WealthSphere.Services.Implementation
                     MonthlyIncome = item.MonthlyIncome,
                     Date = item.Date,
                     OtherSource = item.OtherSource,
-                    TotalCTC = item.TotalCTC
+                    TotalCTC = item.TotalCTC,
+                    UserId = item.UserId.ToString()
                 };
                 list.Add(income);
             }            
@@ -80,7 +83,8 @@ namespace WealthSphere.Services.Implementation
                 MonthlyIncome = result.MonthlyIncome,
                 Date = result.Date,
                 OtherSource = result.OtherSource,
-                TotalCTC = result.TotalCTC
+                TotalCTC = result.TotalCTC,
+                UserId = result.UserId.ToString()
             };
             return income;            
         }

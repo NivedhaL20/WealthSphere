@@ -13,12 +13,7 @@ using WealthSphere.Services.Interface;
 namespace WealthSphere.Services.Implementation
 {
     public class AuthService : IAuthService
-    {
-        private static readonly Dictionary<string, string> _usersDb = new Dictionary<string, string>
-        {
-            { "Nivedha", "aed6d433740e415b78077f93b5445061b4704bc17ccb4427bb026ca60737e8e8" } //password: @spKJ8segvt@
-        };
-
+    {       
         public readonly IAuthRepository _authRepository;
 
         //Dependency injection
