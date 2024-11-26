@@ -107,5 +107,13 @@ namespace WealthSphere.Services.Implementation
             var expense = await _expenseRepository.GetExpenseByCurrentMonth(currentMonth, currentYear, userId);
             return expense;
         }
+
+        public async Task<decimal> GetDebtsByCurrentMonth(Guid userId)
+        {
+            var currentMonth = DateTime.Now.Month;
+            var currentYear = DateTime.Now.Year;
+            var expense = await _expenseRepository.GetDebtsByCurrentMonth(currentMonth, currentYear, userId);
+            return expense;
+        }
     }
 }

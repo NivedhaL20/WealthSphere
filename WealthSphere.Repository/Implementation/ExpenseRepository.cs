@@ -65,5 +65,13 @@ namespace WealthSphere.Repository.Implementation
                 .SumAsync(x => x.Amount);
             return result;
         }
+
+        public async Task<decimal> GetDebtsByCurrentMonth(int month, int year, Guid userId)
+        {
+            var result = await _dbContext.Expense
+                .Where(x => x.Date.Year == year && x.Date.Month == month && x.UserId == userId && x.ExpenseType == "Debts")
+                .SumAsync(x => x.Amount);
+            return result;
+        }        
     }
 }

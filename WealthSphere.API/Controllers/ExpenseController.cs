@@ -72,5 +72,12 @@ namespace WealthSphere.API.Controllers
             var result = await _expenseService.GetExpenseByCurrentMonth(userId);
             return Ok(result);
         }
+
+        [HttpGet("debts/currentMonth")]
+        public async Task<IActionResult> GetDebtsByCurrentMonth(Guid userId)
+        {
+            var result = await _expenseService.GetDebtsByCurrentMonth(userId);
+            return Ok(result);
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace WealthSphere.Repository.Interface
         Task<bool> DeleteAsync(Guid id);
         Task<List<Expense>> GetExpenseByYear(int year, Guid userId);
         Task<decimal> GetExpenseByCurrentMonth(int month, int year, Guid userId);
+        Task<decimal> GetDebtsByCurrentMonth(int month, int year, Guid userId);
     }
 }
