@@ -118,9 +118,11 @@ namespace WealthSphere.Services.Implementation
 
         public async Task<List<ExpenseByCategory>> GetExpenseByCategory(int year, Guid userId)
         {
+            var currentDate = DateTime.Now;
             var expenses = await _expenseRepository.GetExpenseByYear(year, userId);
 
-            var groupedByMonth = expenses.GroupBy(x => new { x.Date.Year, x.Date.Month, x.ExpenseType })
+                var groupedByMonth = expenses.GroupBy(x => new { x.Date.Year, x.Date.Month, x.ExpenseType })
+                .Where(x => x.Key.Month == currentDate.Month  && x.Key.Year == currentDate.Year)
                 .Select(y => new ExpenseByCategory
                 {
                     Category = y.Key.ExpenseType,

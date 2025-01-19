@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddDbContext<WealthSphereDbContext>(options =>
-            options.UseSqlServer("Server=localhost;Database=TestDB;Trusted_Connection=True;MultipleActiveResultSets=true;"));
+            options.UseSqlServer("Server=localhost\\SQLEXPRESS01;Database=TestDB;Trusted_Connection=True;MultipleActiveResultSets=true;"));
 
 builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<IAuthRepository, AuthRepository>();

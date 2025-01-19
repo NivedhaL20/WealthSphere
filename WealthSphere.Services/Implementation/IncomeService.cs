@@ -95,7 +95,7 @@ namespace WealthSphere.Services.Implementation
 
             var groupedByMonth = incomes.GroupBy(x => new { x.Date.Year, x.Date.Month })
                 .Select(y => new IncomeByMonth
-                {
+                {           
                     Month = y.Key.Month,
                     TotalAmount = y.Sum(i => i.MonthlyIncome)
                 })
